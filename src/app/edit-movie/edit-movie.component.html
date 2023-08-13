@@ -1,0 +1,68 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+ <!-- ngModel binds the value from ts file  -->
+
+<form class="movie-form" #movieForm="ngForm" (submit)="updateMovie(movieForm)">
+    <h2>Movie CRUD Angular</h2>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Movie Id</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="{{movie.movieId}}" [(ngModel)]='movie.movieId'  name="movieId">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Movie Name</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput type="text" placeholder="{{movie.movieName}}" [(ngModel)]='movie.movieName' name="movieName">
+        </mat-form-field>
+        
+    </p>
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Genre</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="{{movie.movieDetails.genre}}" [(ngModel)]='movie.movieDetails.genre' name="movieGenre">
+        </mat-form-field>
+        
+    </p>
+
+
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Rating</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="{{movie.movieDetails.rating}}" [(ngModel)]='movie.movieDetails.rating' name="movieRating" >
+        </mat-form-field>
+        
+    </p>
+
+    <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Director</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="{{movie.movieDetails.director}}" [(ngModel)]='movie.movieDetails.director' name="movieDirector" >
+        </mat-form-field>
+        
+    </p>
+
+    <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="{{movie.movieDetails.description}}" [(ngModel)]='movie.movieDetails.description' name="movieDesc" >
+        </mat-form-field>
+      
+    </p>
+
+
+    &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+    <button mat-stroked-button color="primary">Update Movie Details </button>
+
+</form>
+
+
+

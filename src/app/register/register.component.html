@@ -1,0 +1,52 @@
+<form class="register-form" #registerForm="ngForm" (submit)="registerUser(registerForm)">
+    <h2>Register</h2>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Employee Name</mat-label>
+        <input matInput type="name" placeholder="name" required #name="ngModel" name="eName" ngModel>
+        </mat-form-field>
+      <br>
+      <span *ngIf="name.invalid && name.touched">Please enter a valid Input</span>
+    </p>
+
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Employee Id</mat-label>
+        <input matInput type="id" placeholder="Enter Employee Id" required #name="ngModel" name="eId" ngModel>
+        </mat-form-field>
+      <br>
+      <span *ngIf="name.invalid && name.touched">Please enter a valid Input</span>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Employee Birth Date</mat-label>
+        <input matInput type="bday" placeholder="Enter Birth date " required #name="ngModel" name="eBirthDate" ngModel>
+        </mat-form-field>
+     
+    </p>
+      <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Mobile Number</mat-label>
+          <input matInput type="number" name="mobileNumber" placeholder="Mobile Number" required #name="ngModel" name="eNumber" ngModel>
+          </mat-form-field>
+        
+      </p>
+    <p>
+        <mat-form-field appearance="outline">
+          <mat-label>Gender</mat-label>
+          <input matInput  placeholder="Enter Gender"  #name="ngModel" name="eGender" ngModel>
+        </mat-form-field>
+        <br>
+    </p>
+    <p>
+      <mat-form-field appearance="outline">
+        <mat-label>Department</mat-label>
+        <input matInput  placeholder="Enter DepartmentName"   name="eGender" #name="ngModel" ngModel>
+      </mat-form-field>
+      <br>
+  </p>
+
+    <button mat-stroked-button color="primary" [disabled]="registerForm.invalid" type="submit">Submit</button>
+      
+  </form>
+  

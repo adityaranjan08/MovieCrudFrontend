@@ -1,0 +1,118 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+
+
+<div id="wrapper">
+    
+    <div id="left">
+
+
+        <form class="movie-form" #movieForm="ngForm" (submit)="addMovie(movieForm)">
+            <h2>Movie Form</h2>
+        <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Movie Id</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="Enter Movie Id" required #name="ngModel" name="movieId" ngModel>
+        </mat-form-field>
+        </p>
+        <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Movie Name</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput type="text" placeholder="Enter Movie Title"  name="movieName" ngModel>
+        </mat-form-field>
+        
+        </p>
+        <p>
+        <mat-form-field appearance="outline">
+            <mat-label>Genre</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="Enter Movie Genre" name="movieGenre" ngModel>
+        </mat-form-field>
+        
+        </p>
+
+
+        <p>
+            <mat-form-field appearance="outline">
+            <mat-label>Rating</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="Enter Movie Rating" name="movieRating" ngModel>
+            </mat-form-field>
+        
+        </p>
+
+        <p>
+            <mat-form-field appearance="outline">
+            <mat-label>Director</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="Enter Movie Director"  name="movieDirector" ngModel>
+            </mat-form-field>
+        
+         </p>
+
+        <p>
+            <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <mat-icon matSuffix>movie</mat-icon>
+            <input matInput placeholder="Enter Movie Description"  name="movieDesc" ngModel>
+            </mat-form-field>
+        </p>
+
+
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+             <button mat-stroked-button color="primary">Add Movie To Library</button>
+
+        </form>
+
+    
+    </div>
+
+
+
+
+
+    <div id="right">
+
+         
+          <h1>	<mat-icon>favorite</mat-icon>&nbsp; Favourite Movies </h1>
+          <hr>
+        
+            <div class="Movie-Lib">
+                <table style="background-color: white" class="table">
+                
+             <tr>
+                <td>Movie id</td>
+                <td>Movie Name</td>
+                <td>Genre </td>
+                <td>Rating</td>
+                <td>Director</td>
+                <td>Description</td>
+             </tr>
+             
+             
+            
+                 
+        <tbody>
+                 
+            
+            <tr *ngFor="let movie of movies">
+                <td>{{movie.movieId}}</td>
+                <td>{{movie.movieName}}</td>
+                <td>{{movie.movieDetails.genre}}</td>
+                <td>{{movie.movieDetails.rating}}</td>
+                <td>{{movie.movieDetails.director}}</td>
+                <td>{{movie.movieDetails.description}}</td>
+                <td> <button mat-flat-button color="primary" (click)="updateMovie(movie)">Update</button></td>
+                <td> <button mat-flat-button color="warn" (click)="deleteMovie(movie)">Delete</button></td>
+             </tr>
+            
+         </tbody>
+        </table> 
+
+    </div>
+
+</div>
